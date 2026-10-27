@@ -1,0 +1,27 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Two Poynt - Real Estate Contact Form Submissions
+    // ===============================================================
+    match /contact_submissions/{submissionId} {
+      // 1. Allow public website visitors to submit contact forms
+      allow create: if request.resource.data.name is string
+                    && request.resource.data.name.size() >= 2
+                    && request.resource.data.name.size() <= 100
+                    && request.resource.data.email is string
+                    && request.resource.data.phone is string;
+
+      // 2. Disallow read, update, and delete operations from the public frontend
+      // Submissions are private and accessible only via Firebase Console
+      allow read, update, delete: if false;
+    }
+
+    // Default deny all other collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

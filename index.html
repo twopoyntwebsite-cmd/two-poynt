@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden light-mode">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('tp_theme');
+                if (saved === 'dark') {
+                    document.documentElement.classList.remove('light-mode');
+                } else {
+                    document.documentElement.classList.add('light-mode');
+                    if (!saved) localStorage.setItem('tp_theme', 'light');
+                }
+            } catch (e) {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Poynt | Property & People — Unbiased Luxury Real Estate Advisory</title>
+    <meta name="description" content="The right property starts with the right conversation. Two Poynt provides personalised real estate advisory, connecting people and properties with clarity, transparency, and unbiased guidance.">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;0,6..96,800;0,6..96,900;1,6..96,400&family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/copperplate-gothic-std" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/copperplate" rel="stylesheet">
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#080a0f',
+                        gold: {
+                            50: '#fdfbf2',
+                            100: '#fbf7e2',
+                            200: '#f5e9d3',
+                            300: '#edd8b0',
+                            400: '#ddc28d',
+                            500: '#ddc28d',
+                            600: '#c5a66b',
+                            700: '#9d7f45',
+                            800: '#7a602f',
+                            900: '#5a451d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Copperplate Gothic 32 BC"', '"Copperplate Gothic Std"', '"Copperplate Gothic Bold"', '"Copperplate Gothic"', '"Copperplate"', 'serif'],
+                        serif: ['"Copperplate Gothic 32 BC"', '"Copperplate Gothic Std"', '"Copperplate Gothic Bold"', '"Copperplate Gothic"', '"Copperplate"', 'serif'],
+                        brand: ['"Copperplate Gothic 32 BC"', '"Copperplate Gothic Std"', '"Copperplate Gothic Bold"', '"Copperplate Gothic"', '"Copperplate"', 'serif'],
+                        display: ['"Copperplate Gothic 32 BC"', '"Copperplate Gothic Std"', '"Copperplate Gothic Bold"', '"Copperplate Gothic"', '"Copperplate"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Firebase config for browser preview -->
+    <script>
+        window.__ENV__ = window.__ENV__ || {
+            VITE_FIREBASE_API_KEY: "AIzaSyAJi9LfrDF1Sbgab22kvSOq-QAoXD5-ca0",
+            VITE_FIREBASE_AUTH_DOMAIN: "backend-two-poynt.firebaseapp.com",
+            VITE_FIREBASE_PROJECT_ID: "backend-two-poynt",
+            VITE_FIREBASE_STORAGE_BUCKET: "backend-two-poynt.firebasestorage.app",
+            VITE_FIREBASE_MESSAGING_SENDER_ID: "931470567610",
+            VITE_FIREBASE_APP_ID: "1:931470567610:web:c01cdadfb1ad24f70d3a83"
+        };
+    </script>
+
+    <!-- Import map for firebase packages -->
+    <script type="importmap">
+    {
+        "imports": {
+            "firebase/app": "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js",
+            "firebase/firestore": "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js"
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-primary-dark text-slate-100 antialiased overflow-x-hidden w-full max-w-full">
+
+    
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="ambient-orb orb-gold-1"></div>
+        <div class="ambient-orb orb-gold-2"></div>
+        <div class="ambient-orb orb-sapphire"></div>
+        <div class="ambient-orb orb-amber"></div>
+        <div class="mesh-overlay"></div>
+    </div>
+
+    
+    <!-- Mobile menu backdrop -->
+    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden hidden transition-opacity duration-300" aria-hidden="true"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-3 sm:py-5" id="mainHeader">
+        <div class="w-[96%] max-w-[1400px] mx-auto px-2 sm:px-4">
+            <nav class="crystal-glass-nav px-6 sm:px-8 lg:px-10 py-3 sm:py-3.5 flex items-center justify-between relative shadow-2xl">
+                
+                
+                <div class="hidden lg:flex items-center gap-5 xl:gap-7 text-center z-10">
+                    <a href="#hero" class="nav-link text-[11px] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        HOME
+                    </a>
+                    <a href="#experience" class="nav-link text-[11px] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        ABOUT US
+                    </a>
+                    <a href="#services" class="nav-link text-[11px] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        SERVICES
+                    </a>
+                    
+                    
+                    <button 
+                        id="themeToggleBtn" 
+                        type="button" 
+                        aria-label="Toggle Light and Dark Mode" 
+                        title="Toggle Light / Dark Mode"
+                        class="theme-toggle-btn group relative flex items-center justify-center w-8 h-8 rounded-full border border-gold-400/40 bg-white/[0.04] text-gold-400 hover:border-gold-400 hover:scale-105 transition-all duration-300 cursor-pointer shadow-[0_0_12px_rgba(221,194,141,0.2)] ml-1"
+                    >
+                        
+                        <svg class="w-4 h-4 icon-moon transition-all duration-300 transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        
+                        <svg class="w-4 h-4 icon-sun hidden transition-all duration-300 transform text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                
+                <a href="#hero" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center text-center z-20">
+                    <span class="two-poynt-brand text-base sm:text-lg md:text-xl font-bold text-white tracking-[0.32em] hover:text-gold-400 transition-colors whitespace-nowrap">
+                        TWO POYNT
+                    </span>
+                </a>
+
+                
+                <div class="hidden lg:flex items-center gap-6 xl:gap-8 text-center ml-auto z-10">
+                    <a href="#projects" class="nav-link text-[11px] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        PROJECTS
+                    </a>
+                    <!-- <a href="#emi-calculator" class="nav-link text-[0.6875rem] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        EMI CALC
+                    </a> -->
+                    <a href="#faq" class="nav-link text-[11px] uppercase tracking-[0.22em] font-medium text-slate-300 hover:text-gold-400 transition-colors">
+                        FAQ
+                    </a>
+                    <button id="navCtaBtn" class="btn-pill-gold text-[10px] sm:text-[11px] uppercase font-bold px-6 sm:px-7 py-2.5 rounded-full cursor-pointer transition-all shadow-[0_0_24px_rgba(221,194,141,0.5)] hover:shadow-[0_0_34px_rgba(221,194,141,0.7)] whitespace-nowrap text-center">
+                        BOOK CONSULTATION
+                    </button>
+                </div>
+
+                
+                <div class="flex lg:hidden items-center">
+                    <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="text-slate-300 hover:text-white p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+
+            </nav>
+        </div>
+
+        
+        <div id="mobileMenu" class="lg:hidden hidden px-4 pt-2 relative z-50">
+            <div class="mobile-menu-panel rounded-2xl p-5 sm:p-6 flex flex-col gap-3 shadow-2xl max-h-[calc(100dvh-5.5rem)] overflow-y-auto custom-scrollbar">
+                <a href="#hero" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">HOME</a>
+                <a href="#experience" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">ABOUT US</a>
+                <a href="#services" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">SERVICES</a>
+                <a href="#projects" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">PROJECTS</a>
+                <a href="#emi-calculator" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">EMI CALCULATOR</a>
+                <a href="#faq" class="mobile-nav-link text-xs uppercase tracking-widest py-1 font-semibold">FAQ</a>
+                <button id="mobileCtaBtn" class="btn-pill-gold w-full text-center py-2.5 rounded-full font-bold text-xs uppercase tracking-wider mt-2 shadow-gold cursor-pointer">
+                    BOOK CONSULTATION
+                </button>
+                
+                <div class="flex items-center justify-between pt-3 border-t border-white/10 mt-1">
+                    <span class="text-xs uppercase tracking-wider text-slate-300 font-medium">Theme</span>
+                    <button id="mobileThemeToggleBtn" type="button" class="theme-toggle-btn flex items-center gap-2 text-xs text-gold-400 px-3.5 py-1.5 rounded-full crystal-glass-subtle border border-gold-400/40 cursor-pointer">
+                        <svg class="w-3.5 h-3.5 icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        <svg class="w-3.5 h-3.5 icon-sun hidden text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <span id="mobileThemeLabel" class="font-medium">Dark Mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+    <main class="relative z-10 pt-28 sm:pt-32 lg:pt-32">
+        <section id="hero" class="min-h-[auto] lg:min-h-[82vh] flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-12 lg:py-16 relative">
+            <div class="max-w-6xl mx-auto w-full text-center">
+                <div class="mb-6 sm:mb-8 mt-2 sm:mt-4 pt-2 flex justify-center items-center px-2">
+                    <h1 class="w-full flex justify-center items-center" title="TWO POYNT">
+                        <svg class="hero-svg-logo w-full max-w-[290px] sm:max-w-[560px] md:max-w-[720px] lg:max-w-[880px] xl:max-w-[980px]" viewBox="0 0 734.04 55.34" fill="currentColor" fill-rule="evenodd" role="img" aria-label="TWO POYNT">
+                            <path d="M 0.47 0.05 L 0.20 0.37 L 0.06 1.12 L 0.00 9.62 L 0.08 10.12 L 0.47 10.47 L 0.97 10.42 L 1.22 10.21 L 1.55 9.12 L 1.97 8.65 L 3.72 8.30 L 18.22 8.28 L 18.72 8.37 L 19.22 8.87 L 19.28 44.87 L 18.90 46.62 L 18.44 47.12 L 17.47 47.71 L 17.22 48.37 L 17.47 48.90 L 17.97 49.08 L 27.22 49.02 L 28.22 48.78 L 28.58 48.37 L 28.54 47.87 L 27.22 47.21 L 26.90 45.62 L 26.97 8.87 L 27.46 8.37 L 27.97 8.28 L 42.47 8.30 L 43.90 8.62 L 45.05 10.12 L 45.72 10.31 L 45.97 10.09 L 46.04 9.62 L 45.89 8.62 L 45.97 0.87 L 45.75 0.12 L 45.22 0.01 L 44.47 1.14 L 42.97 2.14 L 42.22 2.36 L 4.97 2.34 L 3.72 2.01 L 2.47 1.92 L 1.67 1.12 L 1.22 0.18 L 0.97 0.00 L 0.47 0.05 Z M 733.22 0.01 L 732.47 1.14 L 730.97 2.14 L 730.22 2.36 L 692.97 2.34 L 691.72 2.01 L 690.72 2.04 L 689.91 1.37 L 689.22 0.47 L 688.72 0.40 L 688.38 0.62 L 688.20 1.12 L 688.27 7.87 L 688.13 9.62 L 688.22 10.08 L 688.47 10.31 L 689.16 10.12 L 689.53 9.12 L 689.97 8.68 L 691.72 8.30 L 706.22 8.28 L 706.72 8.37 L 707.22 8.87 L 707.30 44.62 L 706.98 46.87 L 706.72 47.20 L 705.33 47.87 L 705.22 48.37 L 705.47 48.90 L 705.97 49.07 L 715.22 49.02 L 716.06 48.87 L 716.58 48.37 L 716.47 47.79 L 715.47 47.41 L 715.15 47.12 L 714.90 45.62 L 714.97 8.87 L 715.46 8.37 L 715.97 8.28 L 730.47 8.30 L 731.90 8.62 L 733.05 10.12 L 733.72 10.31 L 733.97 10.09 L 734.04 9.62 L 733.89 8.62 L 733.97 0.87 L 733.72 0.08 L 733.22 0.01 Z M 225.97 1.86 L 225.22 2.04 L 223.72 1.96 L 222.72 2.30 L 221.72 2.31 L 220.72 2.64 L 219.47 2.71 L 218.72 3.27 L 217.22 3.40 L 215.48 4.37 L 213.82 4.87 L 212.22 5.66 L 211.72 6.22 L 208.47 8.41 L 207.89 9.37 L 206.36 10.87 L 205.31 12.37 L 204.72 13.85 L 203.65 14.87 L 203.61 15.87 L 202.64 17.87 L 202.61 18.87 L 202.12 19.87 L 201.90 23.12 L 201.56 24.12 L 201.55 25.62 L 201.93 27.12 L 201.88 28.62 L 202.15 31.62 L 202.97 33.12 L 203.22 34.87 L 203.86 35.87 L 205.35 39.12 L 206.18 39.87 L 207.22 41.37 L 209.22 43.33 L 210.22 43.69 L 211.97 45.30 L 213.09 45.62 L 213.97 46.30 L 215.09 46.62 L 215.97 47.30 L 217.47 47.94 L 218.47 47.96 L 219.47 48.47 L 220.72 48.51 L 221.97 49.09 L 223.22 48.94 L 224.72 49.33 L 226.22 49.28 L 227.72 49.49 L 229.72 49.48 L 230.97 49.28 L 233.47 49.34 L 234.47 48.71 L 237.41 48.37 L 240.22 47.46 L 241.47 46.72 L 242.72 46.26 L 243.47 45.72 L 244.72 45.26 L 246.47 44.12 L 250.72 39.86 L 251.47 38.13 L 252.54 37.12 L 252.65 35.87 L 253.31 34.87 L 254.12 31.87 L 254.64 30.87 L 254.54 29.37 L 254.90 28.12 L 255.09 25.87 L 254.88 24.62 L 254.93 23.12 L 254.62 22.12 L 254.58 20.87 L 254.22 19.80 L 253.97 18.12 L 253.22 16.86 L 252.97 15.11 L 252.22 14.26 L 251.86 13.37 L 250.18 10.87 L 247.47 7.87 L 244.97 6.32 L 243.72 5.05 L 242.47 4.93 L 240.97 4.30 L 239.97 3.56 L 233.72 2.01 L 230.72 2.01 L 229.22 1.64 L 226.72 1.65 L 225.97 1.86 Z M 84.47 2.29 L 84.15 2.62 L 84.22 3.32 L 85.22 3.73 L 85.93 4.37 L 87.88 7.87 L 87.93 9.12 L 88.97 11.12 L 89.22 12.87 L 90.88 15.87 L 90.93 17.12 L 91.97 19.12 L 92.22 20.87 L 93.97 24.12 L 94.22 25.86 L 94.97 27.12 L 95.22 28.87 L 96.97 32.12 L 97.22 33.86 L 97.97 35.12 L 98.22 36.87 L 99.97 40.12 L 100.22 41.87 L 100.97 43.12 L 101.22 44.87 L 102.00 46.37 L 101.72 47.34 L 100.47 47.68 L 100.22 48.04 L 100.43 48.87 L 100.97 49.08 L 111.22 49.03 L 111.97 48.88 L 112.57 48.37 L 112.49 47.87 L 111.47 47.54 L 111.06 46.87 L 111.13 45.87 L 111.62 44.87 L 111.65 43.87 L 112.77 41.62 L 113.22 39.55 L 114.00 38.37 L 114.47 36.25 L 115.54 34.12 L 115.57 33.12 L 116.54 31.12 L 116.65 29.87 L 117.72 27.74 L 118.53 25.12 L 119.54 23.12 L 119.65 21.87 L 120.54 20.12 L 120.57 19.12 L 121.77 16.62 L 122.20 14.62 L 122.81 13.62 L 123.22 12.52 L 123.72 12.33 L 124.05 12.62 L 124.35 14.12 L 124.97 15.12 L 125.22 16.87 L 126.88 19.87 L 127.00 21.37 L 127.97 23.12 L 128.22 24.87 L 129.18 26.62 L 129.31 28.12 L 130.97 31.12 L 131.22 32.86 L 131.97 34.12 L 132.22 35.87 L 133.88 38.87 L 134.00 40.37 L 134.97 42.12 L 135.22 43.87 L 135.97 45.09 L 136.23 45.87 L 136.37 46.62 L 136.20 47.12 L 135.72 47.56 L 134.69 47.87 L 134.61 48.37 L 135.22 48.88 L 135.97 49.03 L 145.22 49.08 L 145.72 48.91 L 146.12 48.12 L 145.97 47.82 L 145.20 47.37 L 144.82 46.62 L 145.19 44.62 L 146.00 43.37 L 146.42 41.37 L 147.62 38.87 L 147.65 37.87 L 148.72 35.74 L 149.53 33.12 L 150.54 31.12 L 150.57 30.12 L 151.77 27.62 L 152.19 25.62 L 152.87 24.62 L 153.54 23.12 L 153.57 22.12 L 154.54 20.12 L 154.65 18.87 L 155.32 17.37 L 156.00 16.37 L 156.42 14.37 L 157.54 12.12 L 157.65 10.87 L 158.72 8.74 L 159.47 6.26 L 160.43 4.12 L 161.72 3.68 L 162.25 3.12 L 162.14 2.62 L 161.47 2.25 L 151.97 2.24 L 151.32 2.62 L 151.31 3.12 L 151.47 3.32 L 152.47 3.67 L 152.99 4.12 L 153.09 5.12 L 152.76 6.62 L 151.64 8.87 L 151.61 9.87 L 150.42 12.37 L 150.00 14.37 L 149.32 15.37 L 148.64 16.87 L 148.61 17.87 L 147.64 19.87 L 147.54 21.12 L 146.87 22.62 L 146.19 23.62 L 145.76 25.62 L 144.57 28.12 L 144.54 29.12 L 143.47 31.24 L 142.66 33.87 L 141.64 35.87 L 141.56 37.12 L 140.97 38.11 L 140.47 38.30 L 140.10 37.87 L 139.92 36.12 L 139.22 34.86 L 138.97 33.12 L 138.22 31.88 L 136.97 28.12 L 136.22 26.87 L 135.97 25.12 L 135.22 23.86 L 134.97 22.12 L 133.31 19.12 L 133.18 17.62 L 132.22 15.87 L 131.97 14.12 L 131.00 12.37 L 130.88 10.87 L 129.33 8.12 L 128.97 6.12 L 128.30 5.12 L 128.25 4.62 L 128.47 4.12 L 129.72 3.32 L 129.88 3.12 L 129.86 2.62 L 129.22 2.24 L 118.10 2.37 L 117.91 2.62 L 117.96 3.12 L 118.98 4.12 L 118.78 5.62 L 118.19 6.62 L 117.72 8.73 L 116.64 10.87 L 116.54 12.12 L 115.64 13.87 L 115.54 15.12 L 114.64 16.87 L 114.54 18.12 L 113.42 20.37 L 112.99 22.37 L 112.52 23.12 L 111.72 25.73 L 111.20 26.62 L 110.76 28.62 L 109.64 30.87 L 109.61 31.87 L 108.64 33.87 L 108.54 35.12 L 107.64 36.87 L 107.56 38.12 L 106.97 39.11 L 106.47 39.30 L 106.10 38.87 L 105.83 36.87 L 104.31 34.12 L 104.25 32.87 L 103.22 30.87 L 102.97 29.12 L 101.31 26.12 L 101.25 24.87 L 100.22 22.87 L 99.97 21.12 L 99.21 19.87 L 97.97 16.10 L 97.22 14.87 L 96.97 13.12 L 96.21 11.87 L 94.97 8.10 L 94.22 6.87 L 93.93 5.12 L 94.04 4.12 L 94.47 3.59 L 95.33 3.37 L 95.58 2.87 L 94.99 2.37 L 94.47 2.23 L 84.47 2.29 Z M 358.47 2.29 L 358.15 2.62 L 358.11 3.12 L 358.47 3.51 L 359.43 3.87 L 359.90 4.37 L 360.29 6.37 L 360.29 44.62 L 359.90 46.62 L 359.44 47.12 L 358.47 47.71 L 358.23 48.12 L 358.28 48.62 L 358.72 49.04 L 368.47 49.01 L 369.22 48.78 L 369.58 48.37 L 369.47 47.79 L 368.47 47.41 L 368.15 47.12 L 367.58 44.87 L 367.62 30.37 L 367.50 29.37 L 367.72 28.86 L 368.97 28.65 L 389.22 28.70 L 393.72 28.30 L 396.48 27.37 L 397.47 26.72 L 398.72 26.26 L 400.47 25.12 L 402.54 23.12 L 402.57 22.12 L 403.31 20.87 L 404.06 18.37 L 404.29 14.37 L 403.97 11.12 L 403.30 10.12 L 403.12 8.62 L 401.83 6.87 L 400.72 6.12 L 399.22 4.68 L 397.97 4.30 L 397.09 3.62 L 395.47 2.95 L 394.47 2.97 L 393.72 2.69 L 388.22 2.28 L 358.47 2.29 Z M 500.97 2.32 L 500.61 2.62 L 500.64 3.12 L 501.30 3.62 L 502.47 3.94 L 502.97 4.37 L 503.36 5.12 L 507.83 10.87 L 510.00 14.12 L 510.83 14.87 L 514.36 20.12 L 515.18 20.87 L 517.36 24.12 L 520.89 28.62 L 521.64 30.12 L 521.67 45.62 L 520.97 47.19 L 519.69 47.87 L 519.44 48.37 L 519.48 48.87 L 519.97 49.09 L 530.22 49.07 L 530.72 48.90 L 530.97 48.37 L 530.86 47.87 L 529.47 47.20 L 529.22 46.89 L 528.90 44.87 L 528.96 29.87 L 529.86 28.62 L 530.29 27.62 L 532.72 24.86 L 534.28 22.37 L 535.91 20.62 L 537.28 18.37 L 539.90 15.37 L 540.47 14.13 L 542.90 11.37 L 543.47 10.13 L 545.90 7.37 L 546.47 6.13 L 548.01 4.62 L 550.36 3.37 L 550.58 2.87 L 550.22 2.50 L 549.47 2.25 L 538.97 2.23 L 538.22 2.41 L 537.95 3.12 L 539.37 4.12 L 539.60 4.62 L 539.53 5.12 L 538.28 6.37 L 536.90 8.62 L 535.47 10.12 L 533.90 12.62 L 532.47 14.12 L 530.90 16.62 L 529.47 18.12 L 527.90 20.62 L 526.47 22.13 L 525.97 23.12 L 525.72 23.30 L 525.22 23.12 L 524.37 22.12 L 522.18 18.87 L 521.36 18.12 L 520.22 16.53 L 518.91 14.37 L 517.28 12.62 L 514.83 8.87 L 512.05 5.37 L 511.91 4.87 L 512.17 4.12 L 512.72 3.68 L 513.72 3.32 L 513.93 2.87 L 513.72 2.42 L 512.97 2.23 L 500.97 2.32 Z M 593.47 2.29 L 593.15 2.62 L 593.22 3.32 L 594.73 4.12 L 595.02 4.62 L 595.12 5.37 L 595.12 45.62 L 595.02 46.37 L 594.72 46.87 L 593.33 47.87 L 593.22 48.37 L 593.47 48.90 L 593.97 49.08 L 602.22 49.03 L 603.01 48.87 L 603.32 48.37 L 603.00 47.62 L 601.97 47.07 L 601.91 45.87 L 601.55 44.62 L 601.57 11.37 L 601.62 10.87 L 601.97 10.55 L 602.87 10.87 L 603.69 12.12 L 605.72 14.13 L 606.36 15.12 L 607.88 16.62 L 608.30 17.37 L 609.82 18.87 L 610.47 19.86 L 612.72 22.13 L 613.36 23.12 L 614.97 24.62 L 617.47 27.86 L 620.72 31.13 L 623.22 34.37 L 624.82 35.87 L 625.47 36.86 L 627.72 39.13 L 628.36 40.12 L 629.72 41.43 L 630.30 42.37 L 631.82 43.87 L 632.47 44.86 L 633.69 46.12 L 633.92 46.62 L 633.88 47.12 L 633.47 47.57 L 632.50 48.12 L 632.48 48.87 L 632.97 49.10 L 633.97 48.97 L 642.22 49.03 L 642.97 48.89 L 643.22 48.67 L 643.21 47.87 L 642.01 47.12 L 641.56 45.62 L 641.51 5.37 L 641.66 4.87 L 642.39 3.87 L 643.57 3.12 L 643.39 2.62 L 642.47 2.25 L 633.97 2.22 L 633.29 2.37 L 632.92 2.87 L 633.12 3.37 L 634.22 3.72 L 634.68 4.12 L 635.10 6.12 L 635.15 35.87 L 634.97 36.74 L 634.47 36.97 L 633.72 35.79 L 632.22 34.37 L 629.72 31.12 L 627.47 28.86 L 626.82 27.87 L 625.22 26.37 L 622.72 23.12 L 620.47 20.86 L 619.82 19.87 L 618.22 18.37 L 615.72 15.12 L 612.47 11.86 L 610.18 8.87 L 607.47 5.85 L 606.55 4.12 L 606.97 3.70 L 607.97 3.33 L 608.09 2.87 L 607.83 2.37 L 607.22 2.22 L 593.47 2.29 Z M 435.18 24.93 A 19.57 19.57 0 1 0 474.32 24.93 A 19.57 19.57 0 1 0 435.18 24.93 Z M 226.22 7.76 L 225.47 8.01 L 224.47 8.01 L 222.97 8.46 L 220.47 8.70 L 219.72 9.25 L 216.47 10.76 L 215.97 11.38 L 214.22 12.60 L 213.30 13.62 L 211.22 16.58 L 210.57 18.12 L 210.62 18.87 L 210.12 19.87 L 209.62 21.87 L 209.62 23.87 L 209.24 25.37 L 209.25 26.87 L 209.57 27.87 L 209.61 29.12 L 209.97 30.18 L 210.22 31.87 L 210.96 33.12 L 211.22 34.44 L 211.86 35.37 L 212.29 36.37 L 214.72 39.12 L 217.16 40.62 L 217.97 41.30 L 219.04 41.62 L 219.97 42.18 L 221.72 42.51 L 222.72 43.02 L 223.72 43.01 L 224.72 43.33 L 226.22 43.28 L 227.72 43.49 L 229.97 43.28 L 232.47 43.34 L 233.47 42.71 L 236.47 42.36 L 240.16 40.37 L 241.72 39.22 L 242.72 38.23 L 243.47 37.12 L 244.87 35.62 L 245.31 34.37 L 246.00 33.37 L 246.57 31.12 L 246.61 29.87 L 247.06 28.37 L 247.11 23.37 L 246.94 21.12 L 246.31 20.12 L 246.25 18.87 L 245.98 18.12 L 243.97 14.45 L 240.22 10.68 L 239.10 10.37 L 238.22 9.68 L 236.72 9.05 L 235.72 9.03 L 234.72 8.51 L 232.72 8.02 L 229.97 8.04 L 228.22 7.64 L 226.22 7.76 Z M 368.22 8.35 L 367.73 8.62 L 367.56 9.37 L 367.51 21.62 L 367.67 22.12 L 368.47 22.63 L 387.22 22.70 L 390.97 22.45 L 392.22 22.17 L 393.22 21.59 L 394.72 21.23 L 397.00 18.37 L 397.66 15.37 L 397.28 14.12 L 397.05 11.87 L 395.46 9.87 L 393.72 9.05 L 392.72 9.03 L 391.72 8.51 L 388.72 8.49 L 387.22 8.28 L 368.22 8.35 Z M 450.45 50.95 A 4.30 4.30 0 1 0 459.05 50.95 A 4.30 4.30 0 1 0 450.45 50.95 Z" />
+                        </svg>
+                        <span class="sr-only">TWO POYNT</span>
+                    </h1>
+                </div>
+
+                
+                <div class="my-5 sm:my-8 max-w-xl sm:max-w-2xl mx-auto px-3 sm:px-4 w-full">
+                    <div class="flex items-center justify-between gap-3 sm:gap-6 relative z-10 w-full">
+                        
+                        
+                        <div class="cursor-pointer group/node text-left flex-shrink-0" id="nodeProperty">
+                            <span class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-white tracking-wider group-hover/node:text-gold-400 transition-colors block">
+                                Property
+                            </span>
+                        </div>
+
+                        
+                        <div class="flex-1 flex items-center justify-center px-1 sm:px-4 min-w-[32px]">
+                            <div class="property-people-single-line w-full relative flex items-center">
+                                
+                                <div class="node-property-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gold-400 flex-shrink-0 z-10"></div>
+                                
+                                
+                                <div class="flex-1 flow-track-single relative h-[2px] mx-1 sm:mx-2 overflow-hidden">
+                                    <div class="flow-beam-continuous"></div>
+                                </div>
+                                
+                                
+                                <div class="node-people-dot w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-gold-400 flex-shrink-0 z-10"></div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="cursor-pointer group/node text-right flex-shrink-0" id="nodePeople">
+                            <span class="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-semibold text-white tracking-wider group-hover/node:text-gold-400 transition-colors block">
+                                People
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+                <div class="w-full max-w-5xl mx-auto px-3 overflow-hidden mb-8 sm:mb-10 text-center">
+                    <p class="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-light text-slate-200 tracking-normal sm:tracking-wider sm:whitespace-nowrap inline-block leading-relaxed">
+                        The right property starts with the <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-200 via-gold-300 to-amber-400 font-normal">right conversation</span>.
+                    </p>
+                </div>
+
+                
+                
+                
+                
+                <div class="max-w-5xl mx-auto w-full">
+                    <div class="crystal-glass-bar rounded-3xl p-4 sm:p-6 shadow-2xl relative">
+                        <form id="heroFilterForm" onsubmit="return false;" class="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-5 items-center">
+                            
+                            
+                            <div class="md:col-span-3 text-left">
+                                <label for="filterLocation" class="block text-xs uppercase tracking-wider font-semibold text-gold-400 mb-2 flex items-center gap-1.5 h-5 whitespace-nowrap">
+                                    <svg class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <span>Location</span>
+                                </label>
+                                <div class="relative">
+                                    <input 
+                                        type="text" 
+                                        id="filterLocation" 
+                                        placeholder="Enter preferred location..." 
+                                        class="w-full h-12 bg-slate-900/60 border border-white/10 rounded-xl px-4 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-gold-400/70 focus:ring-1 focus:ring-gold-400/50 transition-all"
+                                        autocomplete="off"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-3 text-left">
+                                <label for="filterPropertyType" class="block text-xs uppercase tracking-wider font-semibold text-gold-400 mb-2 flex items-center gap-1.5 h-5 whitespace-nowrap">
+                                    <svg class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                    </svg>
+                                    <span>Property Type</span>
+                                </label>
+                                <div class="relative">
+                                    <select 
+                                        id="filterPropertyType" 
+                                        class="w-full h-12 bg-slate-900/60 border border-white/10 rounded-xl px-4 text-xs sm:text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-gold-400/70 focus:ring-1 focus:ring-gold-400/50 transition-all pr-10"
+                                    >
+                                        <option value="Luxury Villa" class="bg-slate-900 text-slate-200">Pre Launch</option>
+                                        <option value="Sky Penthouse" class="bg-slate-900 text-slate-200">Under Construction</option>
+                                        <option value="3-4 BHK Apartment" class="bg-slate-900 text-slate-200" selected>Ready to move in</option> 
+                                    </select>
+                                    
+                                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3.5 text-gold-400">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-4 text-left">
+                                <div class="flex justify-between items-center mb-2 min-h-[24px]">
+                                    <label for="priceDisplay" class="text-xs uppercase tracking-wider font-semibold text-gold-400 flex items-center gap-1.5 whitespace-nowrap">
+                                        <svg class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                        <span>Price Range</span>
+                                    </label>
+                                    <div id="priceDisplayWrapper" class="relative inline-flex items-center justify-center px-2.5 py-1 rounded-lg crystal-glass-badge border border-gold-400/40 shadow-sm cursor-text min-w-[85px] max-w-[110px]">
+                                        <span class="text-xs font-bold text-gold-400 font-serif select-none pointer-events-none mr-0.5">₹</span>
+                                        <input 
+                                            type="text" 
+                                            id="priceDisplay" 
+                                            value="1.8" 
+                                            class="text-xs font-bold text-gold-300 bg-transparent text-center focus:outline-none w-9 sm:w-10 p-0 border-0 font-serif"
+                                            inputmode="decimal"
+                                            aria-label="Enter property price in Crores"
+                                        >
+                                        <span id="priceUnitSuffix" class="text-xs font-bold text-gold-400 font-serif select-none pointer-events-none ml-0.5">Cr</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col justify-center px-1 min-h-[48px] py-0.5">
+                                    <input 
+                                        type="range" 
+                                        id="priceSlider" 
+                                        min="0" 
+                                        max="100" 
+                                        step="0.5" 
+                                        value="29.4" 
+                                        class="luxury-range-slider cursor-pointer w-full"
+                                        aria-label="Price Range Filter Slider"
+                                    >
+                                    <div class="relative w-full h-5 mt-2 text-xs font-semibold hero-price-ticks" id="heroPriceTicks">
+                                        <span class="absolute hero-price-tick cursor-pointer transition-colors" data-val="80" style="left: 0; right: auto; transform: none;">₹80 L</span>
+                                        <span class="absolute hero-price-tick cursor-pointer transition-colors" data-val="250" style="left: 50%; right: auto; transform: translateX(-50%);">₹2.5 Cr</span>
+                                        <span class="absolute hero-price-tick cursor-pointer transition-colors" data-val="500" style="right: 0; left: auto; transform: none;">₹5 Cr+</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2 flex flex-col items-center justify-center self-center w-full pt-1 md:pt-0 gap-2.5 md:gap-0">
+                                <button 
+                                    type="button" 
+                                    id="openModalBtn" 
+                                    class="w-full h-12 btn-crystal-gold px-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 group shadow-gold transition-all cursor-pointer"
+                                >
+                                    <span>Next</span>
+                                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+
+                                <button 
+                                    type="button" 
+                                    id="heroPriceEmiBtn" 
+                                    class="flex md:hidden w-full h-12 items-center justify-center gap-2 px-4 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 cursor-pointer hero-mobile-emi-btn group"
+                                    aria-label="Calculate EMI"
+                                >
+                                    <svg class="w-4 h-4 text-gold-400 group-hover:scale-110 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>Calculate EMI</span>
+                                </button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    
+                    <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mt-6 text-xs text-slate-400 font-medium">
+                        <div class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            <span>100% Unbiased Advisory</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                            <span>Zero Spam Call Policy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        
+        
+        
+        
+        <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+            <div class="w-[96%] max-w-[1400px] mx-auto px-2 sm:px-4">
+                
+                
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-xs uppercase tracking-[0.28em] font-semibold text-gold-400 block mb-3">
+                        THE TWO POYNT EXPERIENCE
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                        Your Property Journey, Made Simple.
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-300 font-light">
+                        Five steps. Clear guidance. A decision that feels right.
+                    </p>
+                    <div class="w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mt-8"></div>
+                </div>
+
+                
+                <div id="stepsTrack" class="steps-slider-track flex lg:grid lg:grid-cols-5 gap-4 lg:gap-4 xl:gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 lg:pb-0 px-4 sm:px-6 lg:px-0 scroll-smooth">
+
+                    
+                    <div class="step-card crystal-glass-step active-slide rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden flex-shrink-0 w-[84vw] max-w-[320px] sm:w-[320px] lg:w-auto snap-center min-h-[300px] sm:min-h-[320px]" data-step="1">
+                        
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <div class="step-num-box w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                                01
+                            </div>
+                            <div class="hidden lg:flex items-center text-gold-400/50 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-1 relative z-10">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors mb-2.5 tracking-wider leading-snug">
+                                Tell Us What Matters to You
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                                Your budget, your lifestyle, your goals. We start by understanding what the right property means to you.
+                            </p>
+                        </div>
+                        
+                        <div class="pt-4 relative z-10">
+                            <div class="h-1 w-8 bg-gold-400/30 rounded-full group-hover:w-full group-hover:bg-gold-400 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="step-card crystal-glass-step rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden flex-shrink-0 w-[84vw] max-w-[320px] sm:w-[320px] lg:w-auto snap-center min-h-[300px] sm:min-h-[320px]" data-step="2">
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <div class="step-num-box w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                                02
+                            </div>
+                            <div class="hidden lg:flex items-center text-gold-400/50 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1 relative z-10">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors mb-2.5 tracking-wider leading-snug">
+                                Discover Properties That Fit
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                                Skip the endless search. Explore relevant options tailored to your needs, preferred locations and budget.
+                            </p>
+                        </div>
+                        <div class="pt-4 relative z-10">
+                            <div class="h-1 w-8 bg-gold-400/30 rounded-full group-hover:w-full group-hover:bg-gold-400 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="step-card crystal-glass-step rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden flex-shrink-0 w-[84vw] max-w-[320px] sm:w-[320px] lg:w-auto snap-center min-h-[300px] sm:min-h-[320px]" data-step="3">
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <div class="step-num-box w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                                03
+                            </div>
+                            <div class="hidden lg:flex items-center text-gold-400/50 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1 relative z-10">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors mb-2.5 tracking-wider leading-snug">
+                                Compare with Confidence
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                                Look beyond the brochure. Understand the pricing, additional costs, location advantages and the details that make a difference.
+                            </p>
+                        </div>
+                        <div class="pt-4 relative z-10">
+                            <div class="h-1 w-8 bg-gold-400/30 rounded-full group-hover:w-full group-hover:bg-gold-400 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="step-card crystal-glass-step rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden flex-shrink-0 w-[84vw] max-w-[320px] sm:w-[320px] lg:w-auto snap-center min-h-[300px] sm:min-h-[320px]" data-step="4">
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <div class="step-num-box w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                                04
+                            </div>
+                            <div class="hidden lg:flex items-center text-gold-400/50 group-hover:text-gold-400 group-hover:translate-x-1 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1 relative z-10">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors mb-2.5 tracking-wider leading-snug">
+                                Experience It Firsthand
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                                Visit your shortlisted properties, explore the neighbourhood and ask the right questions before you decide.
+                            </p>
+                        </div>
+                        <div class="pt-4 relative z-10">
+                            <div class="h-1 w-8 bg-gold-400/30 rounded-full group-hover:w-full group-hover:bg-gold-400 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="step-card crystal-glass-step rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden flex-shrink-0 w-[84vw] max-w-[320px] sm:w-[320px] lg:w-auto snap-center min-h-[300px] sm:min-h-[320px]" data-step="5">
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <div class="step-num-box w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl flex-shrink-0 group-hover:scale-110 transition-all duration-300">
+                                05
+                            </div>
+                            <div class="hidden lg:flex items-center text-emerald-400/70 group-hover:text-emerald-400 transition-all duration-300">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1 relative z-10">
+                            <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors mb-2.5 tracking-wider leading-snug">
+                                Take the Next Step with Clarity
+                            </h3>
+                            <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                                Found the one? We help coordinate the next steps, from booking discussions to payment details and documentation with the relevant parties.
+                            </p>
+                        </div>
+                        <div class="pt-4 relative z-10">
+                            <div class="h-1 w-8 bg-gold-400/30 rounded-full group-hover:w-full group-hover:bg-gold-400 transition-all duration-500"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div id="stepsMobileControls" class="flex lg:hidden items-center justify-between sm:justify-center gap-4 mt-6 px-4 max-w-sm mx-auto">
+                    
+                    <button id="prevStepBtn" aria-label="Previous step" class="w-10 h-10 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white hover:border-gold-400/50 active:scale-95 transition-all">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    
+                    <div id="stepsDotsContainer" class="flex items-center gap-2">
+                        <button class="step-dot active h-2.5 w-7 rounded-full transition-all duration-300" data-index="0" aria-label="Step 1"></button>
+                        <button class="step-dot h-2.5 w-2.5 rounded-full transition-all duration-300" data-index="1" aria-label="Step 2"></button>
+                        <button class="step-dot h-2.5 w-2.5 rounded-full transition-all duration-300" data-index="2" aria-label="Step 3"></button>
+                        <button class="step-dot h-2.5 w-2.5 rounded-full transition-all duration-300" data-index="3" aria-label="Step 4"></button>
+                        <button class="step-dot h-2.5 w-2.5 rounded-full transition-all duration-300" data-index="4" aria-label="Step 5"></button>
+                    </div>
+
+                    
+                    <button id="nextStepBtn" aria-label="Next step" class="w-10 h-10 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white hover:border-gold-400/50 active:scale-95 transition-all">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                
+                <div class="flex lg:hidden items-center justify-center gap-2 mt-3 text-slate-400 text-[0.6875rem] tracking-widest uppercase font-medium">
+                    <span>Step</span>
+                    <span id="activeStepNumber" class="text-gold-400 font-bold">01</span>
+                    <span>of 05</span>
+                </div>
+
+            </div>
+        </section>
+
+        
+        
+        
+        
+        <section id="services" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+            <div class="w-[96%] max-w-[1400px] mx-auto px-2 sm:px-4">
+                
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs uppercase tracking-[0.28em] font-semibold text-gold-400 block mb-3">
+                        OUR CORE PORTFOLIO
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                        Explore Our Real Estate Services
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-300 font-light">
+                        Bespoke advisory tailored to your distinct residential aspirations, investment criteria, and architectural preferences.
+                    </p>
+                    <div class="w-full max-w-2xl h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent mx-auto mt-8"></div>
+                </div>
+
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+                    
+                    
+                    <div class="service-card crystal-glass-card rounded-3xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-gold-400/50 shadow-2xl relative cursor-pointer" data-service-type="3-4 BHK Apartment">
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img 
+                                src="assets/IMG_2620.jpg" 
+                                alt="Residential Apartments in Bangalore" 
+                                loading="lazy" 
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0a090d] via-[#0a090d]/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity"></div>
+                            
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="service-badge crystal-glass-badge text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-full">
+                                    Curated Residences
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-2xl service-icon-box crystal-glass flex items-center justify-center text-gold-400 border border-gold-400/30 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-md">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-300 transition-colors mb-3 tracking-wide">
+                                    Residential Apartments
+                                </h3>
+                                <p class="text-base text-slate-300 font-normal leading-relaxed mb-6">
+                                    Discover apartments that match your lifestyle, budget, and preferred location, from modern homes to premium residences.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 flex items-center">
+                                <button type="button" class="service-enquire-btn flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider text-gold-400 hover:text-gold-200 font-semibold group/btn transition-colors cursor-pointer">
+                                    <span>Explore Residences</span>
+                                    <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="service-card crystal-glass-card rounded-3xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-gold-400/50 shadow-2xl relative cursor-pointer" data-service-type="Luxury Villa">
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img 
+                                src="assets/IMG_2621.jpg" 
+                                alt="Luxury Villas in Bangalore" 
+                                loading="lazy" 
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0a090d] via-[#0a090d]/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity"></div>
+                            
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="service-badge crystal-glass-badge text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-full">
+                                    Private Enclaves
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-2xl service-icon-box crystal-glass flex items-center justify-center text-gold-400 border border-gold-400/30 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-md">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-300 transition-colors mb-3 tracking-wide">
+                                    Luxury Villas
+                                </h3>
+                                <p class="text-base text-slate-300 font-normal leading-relaxed mb-6">
+                                    Explore spacious villas offering privacy, comfort, and a lifestyle tailored to your needs.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 flex items-center">
+                                <button type="button" class="service-enquire-btn flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider text-gold-400 hover:text-gold-200 font-semibold group/btn transition-colors cursor-pointer">
+                                    <span>Explore Villas</span>
+                                    <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="service-card crystal-glass-card rounded-3xl overflow-hidden flex flex-col group transition-all duration-500 hover:-translate-y-2 border border-white/10 hover:border-gold-400/50 shadow-2xl relative cursor-pointer" data-service-type="Plotted Development">
+                        <div class="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                            <img 
+                                src="assets/IMG_2622.jpg" 
+                                alt="Residential and Investment Plots in Bangalore" 
+                                loading="lazy" 
+                                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#0a090d] via-[#0a090d]/30 to-transparent opacity-90 group-hover:opacity-75 transition-opacity"></div>
+                            
+                            <div class="absolute top-4 left-4 z-20">
+                                <span class="service-badge crystal-glass-badge text-xs uppercase tracking-wider font-semibold px-3.5 py-1.5 rounded-full">
+                                    Prime Corridors
+                                </span>
+                            </div>
+
+                            <div class="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-2xl service-icon-box crystal-glass flex items-center justify-center text-gold-400 border border-gold-400/30 group-hover:scale-110 group-hover:border-gold-400 transition-all duration-300 shadow-md">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white group-hover:text-gold-300 transition-colors mb-3 tracking-wide">
+                                    Residential &amp; Investment Plots
+                                </h3>
+                                <p class="text-base text-slate-300 font-normal leading-relaxed mb-6">
+                                    Find plots with the potential to build your dream home or explore long-term real estate opportunities.
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/10 flex items-center">
+                                <button type="button" class="service-enquire-btn flex items-center gap-2 text-xs sm:text-sm uppercase tracking-wider text-gold-400 hover:text-gold-200 font-semibold group/btn transition-colors cursor-pointer">
+                                    <span>Explore Plots</span>
+                                    <svg class="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        
+        
+        
+        
+        <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden scroll-mt-28">
+            <div class="w-[96%] max-w-[1400px] mx-auto px-2 sm:px-4">
+                
+                <!-- Projects header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.28em] font-semibold text-gold-400 block mb-3">
+                            TRUSTED DEVELOPERS &amp; LANDMARKS
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+                            Our Builders &amp; Featured Projects
+                        </h2>
+                        <p class="text-base sm:text-lg text-slate-300 font-light mt-3 max-w-2xl">
+                            Curated portfolio of Bangalore's most prestigious builders and distinguished addresses.
+                        </p>
+                    </div>
+
+                    <!-- Nav controls -->
+                    <div class="hidden sm:flex items-center gap-3">
+                        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full crystal-glass-subtle border border-gold-400/25 text-[0.6875rem] uppercase tracking-widest text-gold-300 font-medium select-none mr-1 shadow-sm">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Continuous Showcase &bull; Hover to Pause</span>
+                        </div>
+                        <button 
+                            id="projectCarouselPrevBtn" 
+                            type="button" 
+                            aria-label="Reverse direction to right"
+                            title="Scroll Right / Reverse"
+                            class="project-nav-arrow w-11 h-11 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 hover:border-gold-400 hover:scale-105 active:scale-95 transition-all shadow-lg cursor-pointer"
+                        >
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button 
+                            id="projectCarouselPlayPauseBtn" 
+                            type="button" 
+                            aria-label="Pause or resume continuous motion"
+                            title="Pause / Resume"
+                            class="project-nav-arrow w-11 h-11 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 hover:border-gold-400 hover:scale-105 active:scale-95 transition-all shadow-lg cursor-pointer"
+                        >
+                            <svg id="projectPauseIcon" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <svg id="projectPlayIcon" class="w-4 h-4 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </button>
+                        <button 
+                            id="projectCarouselNextBtn" 
+                            type="button" 
+                            aria-label="Move left"
+                            title="Scroll Left"
+                            class="project-nav-arrow w-11 h-11 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 hover:border-gold-400 hover:scale-105 active:scale-95 transition-all shadow-lg cursor-pointer"
+                        >
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Carousel viewport -->
+                <div class="relative w-full">
+                    <div 
+                        id="projectsCarouselContainer" 
+                        class="overflow-hidden rounded-3xl relative select-none pt-4 pb-6 -mt-3 -mb-4 px-1"
+                        tabindex="0"
+                        role="region"
+                        aria-label="Builders and Featured Projects Carousel"
+                    >
+                        <div id="projectsCarouselTrack" class="flex will-change-transform">
+<div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="SOBHA. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/1_sobha.svg" alt="SOBHA Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">SOBHA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Puravankara. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/2_puravankara.svg" alt="Puravankara Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Puravankara</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Sumadhura. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/3_sumadhura.svg" alt="Sumadhura Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Sumadhura</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Brigade. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/4_brigade.svg" alt="Brigade Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Brigade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Godrej Properties. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/5_godrej.svg" alt="Godrej Properties Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Godrej Properties</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Mahindra Lifespaces. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/6_mahindra.svg" alt="Mahindra Lifespaces Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Mahindra Lifespaces</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Lodha. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/7_lodha.png" alt="Lodha Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Lodha</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Prestige Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/8_prestige.svg" alt="Prestige Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Prestige Group</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Bren. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/9_bren.png" alt="Bren Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Bren</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Mana Projects. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/10_mana.png" alt="Mana Projects Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Mana Projects</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="DSR. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/11_dsr.png" alt="DSR Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">DSR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Nambiar. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/12_nambiar.svg" alt="Nambiar Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Nambiar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Adarsh Developers. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/13_adarsh.svg" alt="Adarsh Developers Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Adarsh Developers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Abhee Ventures. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/14_abhee.png" alt="Abhee Ventures Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Abhee Ventures</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Myhna. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/15_myhna.png" alt="Myhna Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Myhna</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="Assetz Property Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/16_assetz.svg" alt="Assetz Property Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Assetz Property Group</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="0" role="button" aria-label="SBR Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/17_sbr.webp" alt="SBR Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">SBR Group</span>
+                                    </div>
+                                </div>
+                            </div>
+
+<!-- Cloned items for marquee loop -->
+<div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="SOBHA. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/1_sobha.svg" alt="SOBHA Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">SOBHA</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Puravankara. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/2_puravankara.svg" alt="Puravankara Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Puravankara</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Sumadhura. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/3_sumadhura.svg" alt="Sumadhura Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Sumadhura</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Brigade. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/4_brigade.svg" alt="Brigade Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Brigade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Godrej Properties. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/5_godrej.svg" alt="Godrej Properties Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Godrej Properties</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Mahindra Lifespaces. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/6_mahindra.svg" alt="Mahindra Lifespaces Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Mahindra Lifespaces</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Lodha. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/7_lodha.png" alt="Lodha Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Lodha</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Prestige Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/8_prestige.svg" alt="Prestige Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Prestige Group</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Bren. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/9_bren.png" alt="Bren Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Bren</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Mana Projects. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/10_mana.png" alt="Mana Projects Logo" loading="lazy" class="project-builder-logo logo-mode-dark">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Mana Projects</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="DSR. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/11_dsr.png" alt="DSR Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">DSR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Nambiar. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/12_nambiar.svg" alt="Nambiar Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Nambiar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Adarsh Developers. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/13_adarsh.svg" alt="Adarsh Developers Logo" loading="lazy" class="project-builder-logo logo-mode-white">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Adarsh Developers</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Abhee Ventures. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/14_abhee.png" alt="Abhee Ventures Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Abhee Ventures</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Myhna. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/15_myhna.png" alt="Myhna Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Myhna</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="Assetz Property Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/16_assetz.svg" alt="Assetz Property Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">Assetz Property Group</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-slide-item px-2.5 sm:px-3 flex-shrink-0" aria-hidden="true">
+                                <div class="project-card group cursor-pointer crystal-glass-project-card rounded-2xl overflow-hidden p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1.5 focus:outline-none focus:ring-2 focus:ring-gold-400/60" tabindex="-1" role="button" aria-label="SBR Group. Click for more info.">
+                                    <div class="project-logo-box w-full rounded-xl flex items-center justify-center p-4">
+                                        <img src="assets/logos/17_sbr.webp" alt="SBR Group Logo" loading="lazy" class="project-builder-logo logo-mode-color">
+                                    </div>
+                                    <div class="pt-4 pb-1 text-center border-t border-gold-400/15 mt-3">
+                                        <span class="builder-company-name text-xs sm:text-sm font-bold text-gold-400 tracking-[0.14em] uppercase block truncate">SBR Group</span>
+                                    </div>
+                                </div>
+                            </div>
+</div>
+                    </div>
+
+                    
+                    <div class="flex sm:hidden items-center justify-between mt-6 px-2">
+                        <div class="flex items-center gap-1.5 text-[0.6875rem] uppercase tracking-widest text-gold-400/80 font-medium">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span>Tap card for info</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button 
+                                id="projectCarouselPrevBtnMobile" 
+                                type="button" 
+                                aria-label="Reverse direction to right"
+                                title="Scroll Right"
+                                class="project-nav-arrow w-9 h-9 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 active:scale-95 transition-all cursor-pointer shadow-md"
+                            >
+                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button 
+                                id="projectCarouselPlayPauseBtnMobile" 
+                                type="button" 
+                                aria-label="Pause or resume animation"
+                                title="Pause / Resume"
+                                class="project-nav-arrow w-9 h-9 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 active:scale-95 transition-all cursor-pointer shadow-md"
+                            >
+                                <svg id="projectPauseIconMobile" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 9v6m4-6v6" />
+                                </svg>
+                                <svg id="projectPlayIconMobile" class="w-3.5 h-3.5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                </svg>
+                            </button>
+                            <button 
+                                id="projectCarouselNextBtnMobile" 
+                                type="button" 
+                                aria-label="Move left"
+                                title="Scroll Left"
+                                class="project-nav-arrow w-9 h-9 rounded-full crystal-glass flex items-center justify-center text-gold-400 hover:text-white border border-gold-400/30 active:scale-95 transition-all cursor-pointer shadow-md"
+                            >
+                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+
+            </div>
+        </section>
+
+        <!-- EMI Calculator -->
+        <section id="emi-calculator" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative scroll-mt-24">
+            <div class="max-w-6xl mx-auto">
+                
+                <!-- Section header -->
+                <div class="text-left mb-10 sm:mb-12">
+                    <span class="text-xs uppercase tracking-[0.28em] font-semibold text-gold-400 block mb-2">
+                        FINANCIAL ADVISORY &amp; PLANNING
+                    </span>
+                    <div class="flex items-center gap-4 sm:gap-6">
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight whitespace-nowrap">
+                            EMI Calculator
+                        </h2>
+                        <div class="flex-1 h-[1px] bg-gradient-to-r from-gold-400/50 via-gold-400/20 to-transparent"></div>
+                    </div>
+                    <p class="text-sm sm:text-base text-slate-300 font-light max-w-2xl mt-3">
+                        Plan your luxury real estate investment with transparent financing estimates, live interest calculations, and tailored tenure projections.
+                    </p>
+                </div>
+
+                <!-- Calculator layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                    
+                    <!-- Inputs -->
+                    <div class="lg:col-span-7 crystal-glass-card rounded-3xl p-4 sm:p-6 md:p-8 relative" id="emiInputsCard">
+                        
+                        <!-- Loan amount -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                                <label for="emiLoanInput" class="text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-gold-400 inline-block"></span>
+                                    Loan Amount
+                                </label>
+                                <div class="relative flex items-center">
+                                    <span class="absolute left-3.5 text-gold-400 font-serif font-bold text-base sm:text-lg pointer-events-none emi-loan-currency-symbol">₹</span>
+                                    <input 
+                                        type="text" 
+                                        id="emiLoanInput" 
+                                        value="1,80,00,000" 
+                                        class="bg-slate-900/80 border border-gold-400/40 focus:border-gold-400 rounded-xl pl-8 pr-3.5 py-1.5 text-right font-serif text-base sm:text-xl font-bold text-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/60 transition-all w-36 xs:w-44 sm:w-52 shadow-inner emi-loan-input-box cursor-text"
+                                        inputmode="numeric"
+                                        placeholder="1,80,00,000"
+                                        aria-label="Enter Loan Amount in Rupees"
+                                    >
+                                    <span id="emiLoanDisplay" class="sr-only">₹1,80,00,000</span>
+                                </div>
+                            </div>
+                            
+                            <input 
+                                type="range" 
+                                id="emiLoanSlider" 
+                                min="2000000" 
+                                max="200000000" 
+                                step="500000" 
+                                value="18000000" 
+                                class="luxury-range-slider cursor-pointer"
+                                aria-label="Loan Amount Slider"
+                            >
+                            
+                            <div class="relative w-full h-5 mt-2 text-xs sm:text-sm text-slate-400 font-medium emi-ticks" id="loanTicks">
+                                <span class="absolute emi-tick" data-val="2000000" style="left: 0; right: auto; transform: none;">₹20 L</span>
+                                <span class="absolute emi-tick" data-val="50000000" style="left: 24.2%; right: auto; transform: translateX(-50%);">₹5 Cr</span>
+                                <span class="absolute emi-tick" data-val="100000000" style="left: 49.5%; right: auto; transform: translateX(-50%);">₹10 Cr</span>
+                                <span class="absolute emi-tick" data-val="150000000" style="left: 74.7%; right: auto; transform: translateX(-50%);">₹15 Cr</span>
+                                <span class="absolute emi-tick" data-val="200000000" style="right: 0; left: auto; transform: none;">₹20 Cr</span>
+                            </div>
+
+                            <!-- Presets -->
+                            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 pt-1">
+                                <span class="text-xs uppercase tracking-wider text-slate-400 mr-1 font-medium">Presets:</span>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="2000000">₹20 L</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="5000000">₹50 L</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="10000000">₹1 Cr</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="18000000">₹1.8 Cr</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="50000000">₹5 Cr</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="100000000">₹10 Cr</button>
+                                <button type="button" class="emi-chip-loan text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="200000000">₹20 Cr</button>
+                            </div>
+                        </div>
+
+                        <!-- Interest rate -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                                <label for="emiRateInput" class="text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-gold-400 inline-block"></span>
+                                    Interest Rate
+                                </label>
+                                <div class="relative flex items-center">
+                                    <input 
+                                        type="text" 
+                                        id="emiRateInput" 
+                                        value="8.5" 
+                                        class="bg-slate-900/80 border border-gold-400/40 focus:border-gold-400 rounded-xl pl-3.5 pr-8 py-1.5 text-right font-serif text-base sm:text-xl font-bold text-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/60 transition-all w-28 sm:w-32 shadow-inner emi-loan-input-box cursor-text"
+                                        inputmode="decimal"
+                                        placeholder="8.5"
+                                        aria-label="Enter Interest Rate Percentage"
+                                    >
+                                    <span class="absolute right-3 text-gold-400 font-serif font-bold text-base sm:text-lg pointer-events-none emi-loan-currency-symbol">%</span>
+                                    <span id="emiRateDisplay" class="sr-only">8.5%</span>
+                                </div>
+                            </div>
+
+                            <input 
+                                type="range" 
+                                id="emiRateSlider" 
+                                min="0" 
+                                max="100" 
+                                step="0.5" 
+                                value="25" 
+                                class="luxury-range-slider cursor-pointer"
+                                aria-label="Interest Rate Slider"
+                            >
+
+                            <div class="relative w-full h-5 mt-2 text-xs sm:text-sm text-slate-400 font-medium emi-ticks" id="rateTicks">
+                                <span class="absolute emi-tick" data-val="7.0" style="left: 0; right: auto; transform: none;">7.0%</span>
+                                <span class="absolute emi-tick" data-val="8.5" style="left: 25%; right: auto; transform: translateX(-50%);">8.5%<span class="hidden md:inline text-[11px] text-slate-400 font-normal"> Prime</span></span>
+                                <span class="absolute emi-tick" data-val="10.0" style="left: 50%; right: auto; transform: translateX(-50%);">10.0%<span class="hidden md:inline text-[11px] text-slate-400 font-normal"> Std</span></span>
+                                <span class="absolute emi-tick" data-val="12.5" style="left: 75%; right: auto; transform: translateX(-50%);">12.5%</span>
+                                <span class="absolute emi-tick" data-val="15.0" style="right: 0; left: auto; transform: none;">15.0%</span>
+                            </div>
+
+                            <!-- Benchmarks -->
+                            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 pt-1">
+                                <span class="text-xs uppercase tracking-wider text-slate-400 mr-1 font-medium">Benchmarks:</span>
+                                <button type="button" class="emi-chip-rate text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="7.0">7.0%</button>
+                                <button type="button" class="emi-chip-rate text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="8.5">8.5% — Prime</button>
+                                <button type="button" class="emi-chip-rate text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="10.0">10.0% — Standard</button>
+                                <button type="button" class="emi-chip-rate text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="12.5">12.5%</button>
+                                <button type="button" class="emi-chip-rate text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="15.0">15.0%</button>
+                            </div>
+                        </div>
+
+                        <!-- Tenure -->
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between gap-3 mb-3 flex-wrap">
+                                <label for="emiTenureInput" class="text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-200 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-gold-400 inline-block"></span>
+                                    Tenure (Years)
+                                </label>
+                                <div class="relative flex items-center">
+                                    <input 
+                                        type="text" 
+                                        id="emiTenureInput" 
+                                        value="20" 
+                                        class="bg-slate-900/80 border border-gold-400/40 focus:border-gold-400 rounded-xl pl-3.5 pr-12 sm:pr-14 py-1.5 text-right font-serif text-base sm:text-xl font-bold text-gold-400 focus:outline-none focus:ring-1 focus:ring-gold-400/60 transition-all w-28 sm:w-36 shadow-inner emi-loan-input-box cursor-text"
+                                        inputmode="numeric"
+                                        placeholder="20"
+                                        aria-label="Enter Loan Tenure in Years"
+                                    >
+                                    <span class="absolute right-3 text-gold-400 font-serif font-bold text-xs sm:text-sm pointer-events-none emi-loan-currency-symbol uppercase tracking-wider">Yrs</span>
+                                    <span id="emiTenureDisplay" class="sr-only">20 Years</span>
+                                </div>
+                            </div>
+
+                            <input 
+                                type="range" 
+                                id="emiTenureSlider" 
+                                min="5" 
+                                max="30" 
+                                step="1" 
+                                value="20" 
+                                class="luxury-range-slider cursor-pointer"
+                                aria-label="Tenure Slider"
+                            >
+
+                            <div class="relative w-full h-5 mt-2 text-xs sm:text-sm text-slate-400 font-medium emi-ticks" id="tenureTicks">
+                                <span class="absolute emi-tick" data-val="5" style="left: 0; right: auto; transform: none;">5 Yrs</span>
+                                <span class="absolute emi-tick" data-val="10" style="left: 20%; right: auto; transform: translateX(-50%);">10 Yrs</span>
+                                <span class="absolute emi-tick" data-val="15" style="left: 40%; right: auto; transform: translateX(-50%);">15 Yrs</span>
+                                <span class="absolute emi-tick" data-val="20" style="left: 60%; right: auto; transform: translateX(-50%);">20 Yrs</span>
+                                <span class="absolute emi-tick" data-val="25" style="left: 80%; right: auto; transform: translateX(-50%);">25 Yrs</span>
+                                <span class="absolute emi-tick" data-val="30" style="right: 0; left: auto; transform: none;">30 Yrs</span>
+                            </div>
+
+                            <!-- Tenure presets -->
+                            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 mt-3 pt-1">
+                                <span class="text-xs uppercase tracking-wider text-slate-400 mr-1 font-medium">Tenure:</span>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="5">5 Years</button>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="10">10 Years</button>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="15">15 Years</button>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="20">20 Years</button>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="25">25 Years</button>
+                                <button type="button" class="emi-chip-tenure text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full crystal-glass-subtle hover:border-gold-400/60 text-slate-300 hover:text-white transition-all cursor-pointer" data-val="30">30 Years</button>
+                            </div>
+                        </div>
+
+                        <!-- Calculate button -->
+                        <div>
+                            <button 
+                                type="button" 
+                                id="calculateEmiBtn" 
+                                class="btn-pill-gold w-full py-3.5 sm:py-4 rounded-xl font-bold text-sm sm:text-base uppercase tracking-wider cursor-pointer shadow-gold hover:shadow-gold-hover transition-all flex items-center justify-center gap-2"
+                            >
+                                <span>Calculate EMI</span>
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- Results summary -->
+                    <div class="lg:col-span-5 crystal-glass-card rounded-3xl p-4 sm:p-6 md:p-8 flex flex-col justify-between relative overflow-hidden" id="emiResultsCard">
+                        <div>
+                            <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6 flex-wrap gap-2">
+                                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-wide">
+                                    Results
+                                </h3>
+                                <span class="text-xs uppercase tracking-wider font-semibold text-gold-400 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-400/30">
+                                    Instant Estimate
+                                </span>
+                            </div>
+
+                            <!-- Monthly EMI -->
+                            <div class="p-5 sm:p-6 rounded-2xl crystal-glass-subtle border border-gold-400/30 mb-6 bg-gradient-to-br from-gold-400/[0.08] to-transparent">
+                                <span class="text-xs sm:text-sm uppercase tracking-wider font-semibold text-gold-400 block mb-1">
+                                    Monthly EMI
+                                </span>
+                                <div id="emiResultMonthly" class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold-300 font-serif tracking-tight">
+                                    ₹1,56,193
+                                </div>
+                                <div class="text-xs sm:text-sm text-slate-400 mt-1.5 font-normal">
+                                    Per month for <span id="emiResultTenureMonths" class="text-slate-200 font-medium">240</span> months
+                                </div>
+                            </div>
+
+                            <!-- Loan details -->
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center justify-between text-sm sm:text-base py-2.5 border-b border-white/5">
+                                    <span class="text-slate-300 font-medium">Principal Amount</span>
+                                    <span id="emiResultPrincipal" class="font-bold text-base sm:text-lg text-white font-serif tracking-wide">₹1,80,00,000</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm sm:text-base py-2.5 border-b border-white/5">
+                                    <span class="text-slate-300 font-medium">Total Interest</span>
+                                    <span id="emiResultInterest" class="font-bold text-base sm:text-lg text-gold-400 font-serif tracking-wide">₹1,94,86,303</span>
+                                </div>
+                                <div class="flex items-center justify-between text-sm sm:text-base py-2.5 border-b border-white/5">
+                                    <span class="text-slate-300 font-medium">Total Amount</span>
+                                    <span id="emiResultTotal" class="font-bold text-base sm:text-lg text-white font-serif tracking-wide">₹3,74,86,303</span>
+                                </div>
+                            </div>
+
+                            <!-- Amortization bar -->
+                            <div class="mb-6">
+                                <div class="flex justify-between text-xs sm:text-sm font-semibold text-slate-300 mb-2">
+                                    <span class="flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 rounded-sm bg-gold-400 inline-block"></span>
+                                        Principal: <span id="emiPercentPrincipal" class="text-gold-300">48%</span>
+                                    </span>
+                                    <span class="flex items-center gap-1.5">
+                                        <span class="w-2.5 h-2.5 rounded-sm bg-slate-600 inline-block"></span>
+                                        Interest: <span id="emiPercentInterest" class="text-slate-400">52%</span>
+                                    </span>
+                                </div>
+                                <div class="w-full h-3 rounded-full bg-slate-800 overflow-hidden flex">
+                                    <div id="emiBarPrincipal" class="h-full bg-gold-400 transition-all duration-300" style="width: 48%;"></div>
+                                    <div id="emiBarInterest" class="h-full bg-slate-600 transition-all duration-300" style="width: 52%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Advisor CTA -->
+                        <div class="pt-4 border-t border-white/10 mt-auto">
+                            <button 
+                                type="button" 
+                                id="emiConsultBtn" 
+                                class="btn-crystal-gold w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-gold"
+                            >
+                                <span>Discuss Financing with Advisor</span>
+                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </button>
+                            <p class="text-xs text-slate-400 text-center mt-2.5 font-light">
+                                Indicative projection only. Exact terms subject to underwriting &amp; lender evaluation.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        
+        
+        
+        
+        <section id="faq" class="py-24 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-4xl mx-auto">
+                
+                
+                <div class="text-center mb-14">
+                    <span class="text-xs uppercase tracking-[0.28em] font-semibold text-gold-400 block mb-3">
+                        QUESTIONS &amp; CLARITY
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
+                        FREQUENTLY ASKED QUESTIONS
+                    </h2>
+                    <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto">
+                        Insights into our fiduciary model, title forensics scrutiny, and homebuyer representation.
+                    </p>
+                    <div class="w-full max-w-md h-[1px] bg-gradient-to-r from-transparent via-gold-400/30 to-transparent mx-auto mt-8"></div>
+                </div>
+
+                
+                <div class="flex flex-col gap-4" id="faqAccordion">
+
+                    <div class="faq-item crystal-glass-faq rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-400 group relative overflow-hidden" tabindex="0" role="region" aria-expanded="false">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="faq-question-text text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors tracking-wide leading-relaxed">
+                                What is Two Poynt?
+                            </h3>
+                            <div class="faq-chevron-box w-8 h-8 rounded-full crystal-glass flex items-center justify-center flex-shrink-0 text-gold-400/80 group-hover:text-gold-300 group-hover:border-gold-400/50 transition-all duration-300">
+                                <svg class="faq-chevron w-4 h-4 transition-transform duration-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content pt-4 mt-3 border-t border-white/10 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                                    <p>
+                                        Two Poynt helps homebuyers and investors explore residential properties that match their needs, budget, and goals.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item crystal-glass-faq rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-400 group relative overflow-hidden" tabindex="0" role="region" aria-expanded="false">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="faq-question-text text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors tracking-wide leading-relaxed">
+                                What types of properties do you offer?
+                            </h3>
+                            <div class="faq-chevron-box w-8 h-8 rounded-full crystal-glass flex items-center justify-center flex-shrink-0 text-gold-400/80 group-hover:text-gold-300 group-hover:border-gold-400/50 transition-all duration-300">
+                                <svg class="faq-chevron w-4 h-4 transition-transform duration-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content pt-4 mt-3 border-t border-white/10 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                                    <p>
+                                        We help you explore residential apartments, villas, and plots across suitable locations in Bengaluru.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item crystal-glass-faq rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-400 group relative overflow-hidden" tabindex="0" role="region" aria-expanded="false">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="faq-question-text text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors tracking-wide leading-relaxed">
+                                How can Two Poynt help me find a property?
+                            </h3>
+                            <div class="faq-chevron-box w-8 h-8 rounded-full crystal-glass flex items-center justify-center flex-shrink-0 text-gold-400/80 group-hover:text-gold-300 group-hover:border-gold-400/50 transition-all duration-300">
+                                <svg class="faq-chevron w-4 h-4 transition-transform duration-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content pt-4 mt-3 border-t border-white/10 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                                    <p>
+                                        Share your requirements with us, and we'll help you shortlist suitable options and coordinate site visits.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item crystal-glass-faq rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-400 group relative overflow-hidden" tabindex="0" role="region" aria-expanded="false">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="faq-question-text text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors tracking-wide leading-relaxed">
+                                Do you help property investors?
+                            </h3>
+                            <div class="faq-chevron-box w-8 h-8 rounded-full crystal-glass flex items-center justify-center flex-shrink-0 text-gold-400/80 group-hover:text-gold-300 group-hover:border-gold-400/50 transition-all duration-300">
+                                <svg class="faq-chevron w-4 h-4 transition-transform duration-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content pt-4 mt-3 border-t border-white/10 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                                    <p>
+                                        Yes. We help investors compare property prices, locations, rental potential, and possible long-term appreciation.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item crystal-glass-faq rounded-2xl p-5 sm:p-6 cursor-pointer transition-all duration-400 group relative overflow-hidden" tabindex="0" role="region" aria-expanded="false">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="faq-question-text text-base sm:text-lg font-bold text-white group-hover:text-gold-300 transition-colors tracking-wide leading-relaxed">
+                                How do I get started?
+                            </h3>
+                            <div class="faq-chevron-box w-8 h-8 rounded-full crystal-glass flex items-center justify-center flex-shrink-0 text-gold-400/80 group-hover:text-gold-300 group-hover:border-gold-400/50 transition-all duration-300">
+                                <svg class="faq-chevron w-4 h-4 transition-transform duration-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer-wrapper">
+                            <div class="faq-answer-inner">
+                                <div class="faq-answer-content pt-4 mt-3 border-t border-white/10 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                                    <p>
+                                        Submit your property requirements through our website, and our team will connect with you to discuss suitable options.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    
+    
+    
+    
+    
+    <div id="personalizedModal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden p-3 sm:p-4 md:p-6 opacity-0 pointer-events-none transition-all duration-300 flex justify-center items-start sm:items-center">
+        
+        <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-md" id="modalBackdrop"></div>
+
+        
+        <div class="relative w-full max-w-xl crystal-glass-modal rounded-3xl p-5 sm:p-7 md:p-8 shadow-2xl z-10 transform scale-95 transition-all duration-300 my-auto" id="modalCard">
+            
+            
+            <button id="closeModalBtn" aria-label="Close dialog" class="absolute top-5 right-5 w-8 h-8 rounded-full crystal-glass flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+            
+            
+            
+            <div id="modalFormState">
+                
+                <div class="text-left mb-6 pr-6">
+                    <span class="text-xs uppercase tracking-wider font-semibold text-gold-400 block mb-1">
+                        Tailored Advisory Request
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white mb-2">
+                        Your Property Search, Personalised.
+                    </h3>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Your next move deserves more than a listing. Get tailored property options, clear cost insights, and guidance from a Two Poynt property advisor.
+                    </p>
+                </div>
+
+                
+                <div class="crystal-glass-subtle rounded-xl p-3 mb-6 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm border border-white/10">
+                    <div class="flex items-center gap-1.5 text-slate-300">
+                        <span class="text-gold-400 font-semibold">Location:</span>
+                        <span id="badgeModalLoc" class="text-white">Selected Area</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-slate-300">
+                        <span class="text-gold-400 font-semibold">Type:</span>
+                        <span id="badgeModalType" class="text-white">Luxury Residence</span>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-slate-300">
+                        <span class="text-gold-400 font-semibold">Budget:</span>
+                        <span id="badgeModalPrice" class="text-white">₹1.8 Cr</span>
+                    </div>
+                </div>
+
+                
+                <form id="leadCaptureForm" class="space-y-4">
+                    
+                    
+                    <div>
+                        <label class="block text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-300 mb-1.5" for="inputFullName">
+                            Full Name <span class="text-gold-400">*</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="inputFullName" 
+                            required 
+                            placeholder="e.g. Rahul Sharma" 
+                            class="w-full bg-slate-900/80 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/50 transition-all"
+                        >
+                    </div>
+
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-300 mb-1.5" for="inputPhone">
+                                Contact Number <span class="text-gold-400">*</span>
+                            </label>
+                            <input 
+                                type="tel" 
+                                id="inputPhone" 
+                                required 
+                                placeholder="+91 98765 43210" 
+                                class="w-full bg-slate-900/80 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/50 transition-all"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-300 mb-1.5" for="inputEmail">
+                                Email Address <span class="text-slate-400 font-normal lowercase">(optional)</span>
+                            </label>
+                            <input 
+                                type="email" 
+                                id="inputEmail" 
+                                placeholder="rahul@domain.com (optional)" 
+                                class="w-full bg-slate-900/80 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/50 transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        <label class="block text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-300 mb-1.5" for="selectTimings">
+                            Preferred Timings <span class="text-gold-400">*</span>
+                        </label>
+                        <select 
+                            id="selectTimings" 
+                            required 
+                            class="w-full bg-slate-900/80 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base text-white focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/50 transition-all cursor-pointer"
+                        >
+                            <option value="Morning (9:00 AM - 12:00 PM)" class="bg-slate-900">Morning (9:00 AM - 12:00 PM)</option>
+                            <option value="Afternoon (12:00 PM - 4:00 PM)" class="bg-slate-900" selected>Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option value="Evening (4:00 PM - 8:00 PM)" class="bg-slate-900">Evening (4:00 PM - 8:00 PM)</option>
+                            <option value="Weekend Priority Call" class="bg-slate-900">Weekend Priority Call</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs sm:text-sm uppercase tracking-wider font-semibold text-slate-300 mb-1.5" for="inputMessage">
+                            Requirements / Message <span class="text-slate-400 font-normal lowercase">(optional)</span>
+                        </label>
+                        <textarea 
+                            id="inputMessage" 
+                            rows="2"
+                            placeholder="Specific configurations, preferred locations, or timeline..." 
+                            class="w-full bg-slate-900/80 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base text-white placeholder-slate-500 focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400/50 transition-all resize-none"
+                        ></textarea>
+                    </div>
+
+                    <!-- Feedback alert -->
+                    <div id="formFeedbackMessage" class="hidden text-xs sm:text-sm py-2.5 px-3.5 rounded-xl border text-center transition-all" role="alert" aria-live="polite"></div>
+
+                    <div class="pt-2">
+                        <button 
+                            type="submit" 
+                            id="submitLeadBtn" 
+                            class="w-full btn-crystal-gold py-4 px-6 rounded-2xl font-bold text-sm sm:text-base uppercase tracking-wider flex items-center justify-center gap-2 group shadow-gold transition-all"
+                        >
+                            <span>Submit</span>
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <p class="text-xs text-slate-400 text-center flex items-center justify-center gap-1.5 mt-2.5 font-light">
+                        <svg class="w-3.5 h-3.5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        Your contact details are strictly confidential. No marketing spam.
+                    </p>
+                </form>
+            </div>
+
+            
+            
+            
+            
+            <div id="modalSuccessState" class="hidden text-center py-6 px-2 sm:px-4">
+                
+                
+                <div class="w-16 h-16 rounded-full crystal-glass-badge border border-gold-400/60 mx-auto flex items-center justify-center mb-6 shadow-gold animate-bounce-subtle">
+                    <svg class="w-8 h-8 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M8 12l3 3 5-5"></path>
+                    </svg>
+                </div>
+
+                
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-3">
+                    You're One Step Closer.
+                </h3>
+
+                
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-md mx-auto mb-6">
+                    Your requirements have been received. A Two Poynt property expert will contact you to discuss suitable options.
+                </p>
+
+                
+                <div class="py-3 px-6 rounded-xl crystal-glass-subtle inline-block mb-8 border border-gold-400/30">
+                    <p class="text-sm font-serif italic text-gold-300 tracking-wide">
+                        "The right property begins with the right guidance."
+                    </p>
+                </div>
+
+                
+                <button type="button" id="successDoneBtn" class="btn-crystal-gold w-full py-3 rounded-xl font-semibold text-sm uppercase tracking-wider">
+                    Return to Experience
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <footer class="border-t border-gold-400/15 py-8 px-4 sm:px-6 lg:px-8 relative z-10 bg-[#0a090d]/80 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs sm:text-sm text-slate-400">
+            <div class="flex flex-col items-center sm:items-start gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="two-poynt-brand font-bold text-white tracking-[0.2em]">TWO POYNT</span>
+                    <span class="text-gold-400/60">&bull;</span>
+                    <span class="text-slate-300">Property to People</span>
+                </div>
+                <div class="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 text-xs text-slate-400">
+                    <a href="tel:+919876543210" class="footer-contact-link flex items-center gap-1.5 hover:text-gold-400 transition-colors">
+                        <!-- <svg class="w-3.5 h-3.5 text-gold-400/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                        </svg> -->
+                        <!-- <span class="tracking-wider">+91 77956 91074</span> -->
+                    </a>
+                    <span class="text-gold-400/40 hidden sm:inline">&bull;</span>
+                    <a href="mailto:advisory@twopoynt.com" class="footer-contact-link flex items-center gap-1.5 hover:text-gold-400 transition-colors">
+                        <svg class="w-3.5 h-3.5 text-gold-400/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="tracking-wider">info@twopoynt.com</span>
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-wrap items-center justify-center sm:justify-end gap-x-6 gap-y-2 text-slate-400 text-xs sm:text-sm">
+                <button type="button" id="openCookiePolicyBtn" class="footer-legal-link hover:text-gold-400 focus:text-gold-400 transition-colors focus:outline-none focus:ring-1 focus:ring-gold-400 rounded px-1 cursor-pointer">Cookie Policy</button>
+                <button type="button" id="openCookieSettingsBtn" class="footer-legal-link hover:text-gold-400 focus:text-gold-400 transition-colors focus:outline-none focus:ring-1 focus:ring-gold-400 rounded px-1 cursor-pointer">Cookie Settings</button>
+            </div>
+        </div>
+    </footer>
+
+    
+    <footer id="brandWatermarkFooter" class="brand-watermark-footer relative z-10 w-full pt-10 sm:pt-16 pb-8 sm:pb-12 border-t border-white/[0.06] text-center">
+        <div class="max-w-6xl mx-auto px-4 flex items-center justify-center">
+            <h2 class="watermark-two-poynt font-bold leading-none text-center transition-all duration-500">
+                TWO POYNT
+            </h2>
+        </div>
+        <div class="mt-3 sm:mt-4 text-xs sm:text-sm tracking-normal sm:tracking-[0.3em] uppercase text-gold-400/50 font-medium px-4 max-w-full break-words">
+            Architectural Real Estate Advisory &bull; Bangalore
+        </div>
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-slate-400 font-medium">
+            <a href="tel:+919876543210" class="footer-contact-link hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-gold-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                <span>+91 77957 57474</span>
+                <!-- <span>+91 77957 57676</span> -->
+            </a>
+            <!-- <span class="text-gold-400/40">&bull;</span> -->
+            <a href="mailto:info@twopoynt.com" class="footer-contact-link hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                <!-- <svg class="w-3.5 h-3.5 text-gold-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span>info@twopoynt.com</span> -->
+            </a>
+        </div>
+         <div class="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-xs text-slate-400 font-medium">
+            <a href="tel:+919876543210" class="footer-contact-link hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-gold-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                <!-- <span>+91 77957 57474</span> -->
+                <span>+91 77957 57676</span>
+            </a>
+            <!-- <span class="text-gold-400/40">&bull;</span> -->
+            <a href="mailto:info@twopoynt.com" class="footer-contact-link hover:text-gold-400 transition-colors flex items-center gap-1.5">
+                <!-- <svg class="w-3.5 h-3.5 text-gold-400/80" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg> -->
+                <!-- <span>info@twopoynt.com</span> -->
+            </a>
+        </div>
+    </footer>
+    
+    <div id="cookiePolicyModal" class="fixed inset-0 z-50 overflow-y-auto overflow-x-hidden p-3 sm:p-4 opacity-0 pointer-events-none transition-all duration-300 flex justify-center items-start sm:items-center" role="dialog" aria-modal="true" aria-labelledby="cookiePolicyTitle">
+        <div class="modal-backdrop fixed inset-0 bg-black/80 backdrop-blur-md" id="cookiePolicyBackdrop"></div>
+        <div class="relative w-full max-w-3xl crystal-glass-modal rounded-3xl p-5 sm:p-8 shadow-2xl z-10 transform scale-95 transition-all duration-300 my-auto max-h-[90vh] flex flex-col" id="cookiePolicyCard">
+            
+            
+            <div class="flex items-start justify-between pb-4 border-b border-white/10 flex-shrink-0">
+                <div>
+                    <span class="text-[0.6875rem] uppercase tracking-widest font-semibold text-gold-400 block mb-1">
+                        Privacy Preferences &amp; Controls
+                    </span>
+                    <h3 id="cookiePolicyTitle" class="text-xl sm:text-2xl font-bold text-white tracking-wide">
+                        Cookie Policy &amp; Privacy Preferences
+                    </h3>
+                </div>
+                <button id="closeCookiePolicyBtn" aria-label="Close dialog" class="w-8 h-8 rounded-full crystal-glass flex items-center justify-center text-slate-400 hover:text-white transition-colors cursor-pointer flex-shrink-0 ml-4">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            
+            <div class="overflow-y-auto pr-2 sm:pr-4 py-4 space-y-6 text-xs sm:text-sm text-slate-300 font-light leading-relaxed custom-scrollbar flex-1">
+                
+                
+                <div class="p-4 sm:p-5 rounded-2xl crystal-glass-card border border-gold-400/30 space-y-4">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-3">
+                        <span class="text-xs uppercase tracking-widest font-bold text-gold-400">
+                            Customise Your Cookie Settings
+                        </span>
+                        <span class="text-[0.625rem] text-slate-400 font-mono">Policy v1.0</span>
+                    </div>
+
+                    
+                    <div class="flex items-center justify-between gap-4 py-2">
+                        <div class="pr-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-white text-xs sm:text-sm">1. Strictly Essential Cookies</span>
+                                <span class="text-[0.625rem] uppercase font-bold text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30">Always Active</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Essential for core operations including site security, navigation, and theme persistence. Cannot be disabled.
+                            </p>
+                        </div>
+                        <input type="checkbox" checked disabled class="accent-gold-400 w-4 h-4 cursor-not-allowed opacity-80" aria-label="Essential Cookies always active">
+                    </div>
+
+                    
+                    <div class="flex items-center justify-between gap-4 py-2 border-t border-white/5">
+                        <div class="pr-2">
+                            <span class="font-bold text-white text-xs sm:text-sm">2. Functional Cookies</span>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Retains customized selections such as preferred micro-markets, property budget filters, and view configurations.
+                            </p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="cookieToggleFunctional" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-500"></div>
+                        </label>
+                    </div>
+
+                    
+                    <div class="flex items-center justify-between gap-4 py-2 border-t border-white/5">
+                        <div class="pr-2">
+                            <span class="font-bold text-white text-xs sm:text-sm">3. Analytics Cookies</span>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Aggregated, anonymous traffic telemetry to evaluate platform responsiveness, visitor patterns, and feature adoption.
+                            </p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="cookieToggleAnalytics" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-500"></div>
+                        </label>
+                    </div>
+
+                    
+                    <div class="flex items-center justify-between gap-4 py-2 border-t border-white/5">
+                        <div class="pr-2">
+                            <span class="font-bold text-white text-xs sm:text-sm">4. Marketing Cookies</span>
+                            <p class="text-xs text-slate-400 mt-1">
+                                Tailored real estate updates regarding high-priority launches and invitation-only investor previews. Not activated without consent.
+                            </p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="cookieToggleMarketing" class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gold-500"></div>
+                        </label>
+                    </div>
+                </div>
+
+                
+                <div class="space-y-4 pt-2">
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">1.</span> What Are Cookies?
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            Cookies are small text files stored on your device that may help a website remember preferences, maintain functionality, and understand how visitors use the website.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">2.</span> Essential Cookies
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            These cookies support core website functions, such as navigation, security, session management, and remembering necessary preferences. They cannot be disabled through the site's cookie preference controls when they are strictly necessary for the service requested.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">3.</span> Analytics Cookies
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            If analytics tools are enabled, these cookies may help us understand page visits, interactions, and website performance so that we can improve the user experience.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">4.</span> Functional Cookies
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            These cookies may remember preferences such as theme selection or other website settings.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">5.</span> Marketing Cookies
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            If marketing or advertising technologies are enabled, they may be used to measure campaigns or personalize promotional content. Do not activate non-essential marketing cookies before the required consent has been obtained.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">6.</span> Third-Party Services
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            Embedded maps, videos, analytics tools, or other external integrations may use their own cookies or similar technologies, depending on their configuration.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">7.</span> Managing Your Preferences
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            Users should be able to accept all cookies, reject non-essential cookies, or customize their preferences. Essential cookies should remain active where required for core functionality.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">8.</span> Changes to This Policy
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            This policy may be updated when the website's technologies, services, or applicable requirements change.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold text-sm tracking-wide mb-1 flex items-center gap-2">
+                            <span class="text-gold-400 font-bold">9.</span> Contact
+                        </h4>
+                        <p class="text-slate-300 pl-5">
+                            For inquiries concerning cookie preferences and data management, please contact our Data Governance Officer at: <span class="text-gold-300 font-mono font-medium">[Official Contact Email: info@twopoynt.com]</span>.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="mt-4 p-3.5 rounded-xl crystal-glass-subtle border border-white/10 text-xs text-slate-400 leading-relaxed">
+                    <!-- Privacy notice -->
+                </div>
+            </div>
+
+            
+            <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 flex-shrink-0">
+                <button type="button" id="cookieRejectInModalBtn" class="text-xs uppercase tracking-wider text-slate-400 hover:text-white px-4 py-2 rounded-xl transition-colors cursor-pointer">
+                    Reject Non-Essential
+                </button>
+                <div class="flex items-center gap-3">
+                    <button type="button" id="cookieSavePreferencesBtn" class="btn-crystal-gold px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider cursor-pointer shadow-gold">
+                        Save Preferences
+                    </button>
+                    <button type="button" id="cookieAcceptAllInModalBtn" class="btn-pill-gold px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider cursor-pointer">
+                        Accept All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div 
+        id="cookieConsentBanner" 
+        class="fixed bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-xl z-50 pointer-events-auto opacity-0 translate-y-8 transition-all duration-400 ease-out hidden"
+        role="region" 
+        aria-label="Cookie Consent Banner"
+    >
+        <div class="crystal-glass-banner p-5 sm:p-6 rounded-3xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] border border-gold-400/35 backdrop-blur-2xl">
+            <div class="flex items-start gap-3.5 mb-4">
+                <div class="w-8 h-8 rounded-full bg-gold-400/20 border border-gold-400/50 flex items-center justify-center text-gold-400 flex-shrink-0 mt-0.5">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h4 class="text-xs uppercase tracking-widest font-bold text-gold-400 mb-1">
+                        Privacy &amp; Cookie Consent
+                    </h4>
+                    <p class="text-xs sm:text-[0.8125rem] text-slate-200 leading-relaxed font-light" id="cookieBannerText">
+                        We use essential cookies to keep this website working and, with your permission, optional cookies to improve your experience and understand website usage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-end gap-2.5 pt-2 border-t border-white/10">
+                <button 
+                    type="button" 
+                    id="cookieRejectBtn" 
+                    class="text-[0.6875rem] uppercase tracking-wider text-slate-300 hover:text-white px-3.5 py-2 rounded-xl border border-white/10 hover:border-white/30 transition-all cursor-pointer font-semibold"
+                >
+                    Reject Non-Essential
+                </button>
+                <button 
+                    type="button" 
+                    id="cookieCustomizeBtn" 
+                    class="text-[0.6875rem] uppercase tracking-wider text-gold-300 hover:text-gold-200 px-3.5 py-2 rounded-xl crystal-glass-subtle border border-gold-400/30 transition-all cursor-pointer font-semibold"
+                >
+                    Customize Preferences
+                </button>
+                <button 
+                    type="button" 
+                    id="cookieAcceptAllBtn" 
+                    class="btn-crystal-gold text-[0.6875rem] uppercase tracking-wider px-5 py-2 rounded-xl font-bold cursor-pointer shadow-gold"
+                >
+                    Accept All
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div 
+        id="projectToast" 
+        class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 translate-y-6 transition-all duration-300 ease-out"
+        role="status" 
+        aria-live="polite"
+    >
+        <div class="crystal-glass-toast px-5 sm:px-6 py-3.5 rounded-2xl flex items-center gap-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-gold-400/40 backdrop-blur-xl">
+            <div class="w-7 h-7 rounded-full bg-gold-400/20 border border-gold-400/50 flex items-center justify-center text-gold-400 flex-shrink-0">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <span class="text-xs sm:text-sm font-semibold tracking-wider text-slate-100 whitespace-nowrap" id="toastMessage">
+                Contact us for more info.
+            </span>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
